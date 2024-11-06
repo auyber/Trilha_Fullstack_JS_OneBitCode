@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Formulário no HTML</title>
+    </head>
+
+    <body>
+        <h1>Imputs no HTML</h1>
+
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required> 
+            <br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+            <br><br>
+
+            <Label>Gênero</Label><br>
+            <input type="radio" name="genero" id="masculino" value="m" >
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="genero" id="feminino" value="f">
+            <label for="feminino">Feminino</label>
+            <br><br>
+
+            <label>Interesses</label><br>
+            <input type="checkbox" id="backend" value="backend" name="interesses">
+            <label for="backend">Back-end</label>
+            <input type="checkbox" id="frontend" value="frontend" name="interesses">
+            <label for="frontend">Front-end</label>
+            <input type="checkbox" id="fullstack" value="fullstack" name="interesses">
+            <label for="fullstack">Fullstack</label>
+            <br><br>
+
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" name="dataNascimento">
+            <br><br>
+
+            <label for="fotoPerfil">Foto de Perfil:</label>
+            <input type="file" id="fotoPerfil" name="fotoPerfil">
+            <br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
