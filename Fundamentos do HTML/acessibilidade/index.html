@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atributos de Acessibilidade WAI-ARIA</title>
+</head>
+
+<body>
+  <h1>Atributos de Acessibilidade WAI-ARIA</h1>
+
+  <!-- caixa de informação com atributos ARIA -->
+  <div role="alert" aria-labelledby="infoHeading" aria-describedby="infoContent">
+    <h2 id="infoHeading">Informação Importante</h2>
+    <p id="infoContent">Esta é uma mensagem informativa para os usuários.</p>
+  </div>
+
+  <!-- formulário com campos obrigatórios -->
+  <form action="#" method="post">
+    <div>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required aria-required="true" aria-label="Campo de Nome">
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required aria-required="true" aria-label="Campo de Email">
+      <br>
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" required aria-required="true" aria-label="Campo de Mensagem"></textarea>
+    </div>
+
+    <div role="status" aria-live="polite">
+      <!-- mensagem de sucesso dinâmica -->
+      <p>Mensagem enviada com sucesso!</p>
+    </div>
+
+    <div role="status" aria-live="assertive">
+      <!-- mensagem de erro dinâmica -->
+      <p>Erro ao enviar a mensagem. Por favor, verifique os campos obrigatórios.</p>
+    </div>
+
+    <button type="submit" aria-label="Enviar Formulário">Enviar</button>
+  </form>
+</body>
+
+</html>
