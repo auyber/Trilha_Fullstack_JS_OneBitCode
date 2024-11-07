@@ -1,0 +1,67 @@
+/* seletor universal */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* seletor de tag */
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* seletor de elementos aninhados */
+nav a {
+    color: #27ae60;
+}
+
+/* seletor de filhos */
+nav > a {
+    display: block;
+    color: #f5a623;
+    padding: 10px;
+}
+
+/* seletor de classes */
+.laranja {
+    color: #f5a623;
+}
+.verde {
+    color: #27ae60;
+}
+
+/* seletor de id */
+#secao-principal {
+    padding: 20px;
+    text-align: center;
+}
+
+/* combinação de seletores */
+#secao-principal > * {
+    margin-top: 10px;
+}
+
+input {
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* seletor de sequência */
+input + input {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h2 + p {
+    padding: 30px;
+}
+
+/* seletores de propriedade */
+input[name="email"] {
+    background-color: #f5a623;
+}
+
+input[type="password"] {
+    background-color: #27ae60;
+}
