@@ -1,0 +1,16 @@
+/*passe o mouse em cima que você verá o nível da especificação*/
+
+#azul {
+    color: blue;
+}
+
+/* esse possui especificacão maior*/
+body > h1 {
+    color: aquamarine;
+}
+
+h1 {
+    color: red !important;
+}
+
+/*Usar !important para sabe se vc está errando na especifidade, ex: está tentando mudar uma cor, mas de jeito nenhum ela vai. Se vc aplicar o important, e ela mudar, sinal que vc está errando a especificidade*/
