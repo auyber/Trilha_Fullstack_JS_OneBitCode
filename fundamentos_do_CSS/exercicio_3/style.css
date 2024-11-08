@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav, section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1{
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+img{
+    height: 50vh;
+    width: 50vw;
+}
+
+.principal {
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 30px;
+    border: none;
+}
+
+/* Utilizei a extenção ColorZilla do navegador para pegar a cor correta dos itens*/
+
+button {
+    color: white;
+    background-color: #43ABF6;
+    padding: 1em;
+    border-radius: 30px;
+    border: none;
+}
+
+/* Adicionei um estilo a mais, quando passa o mouse por cima dos botões*/
+button:hover {
+    background-color: grey;
+    color: black;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 2em;
+}
