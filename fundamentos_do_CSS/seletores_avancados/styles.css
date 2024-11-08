@@ -1,0 +1,34 @@
+li:nth-child(2) {
+    color: #f00;
+}
+
+li:nth-child(3n) {
+    color: #00f;
+}
+
+/*passar por cima*/
+li:hover {
+    background-color: #999;
+}
+
+/*focus = quando o item está selecionado*/
+
+li::before {
+    content: "(antes) ";
+  }
+  
+  li::after {
+    content: " (depois)";
+  }
+  
+  li:first-child {
+    color: rgb(255, 174, 0);
+}
+
+li:last-child {
+    color: rgb(255, 0, 179);
+}
+
+li:not(:first-child) {
+    color: rgb(0, 255, 255);
+}
