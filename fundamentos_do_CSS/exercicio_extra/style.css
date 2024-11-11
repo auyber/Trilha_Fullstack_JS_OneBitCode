@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-brackground: rgba(0, 0, 0, 0.801);
+    --color-white: white;
+    --color-orange: rgb(235, 173, 41);
+}
+
+nav {
+    background-color: var(--color-brackground);
+    color: var(--color-white);
+    text-align: center;
+}
+
+li {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 02rem;
+    margin-bottom: 02rem;
+    margin-right: 1rem;
+}
+
+.hero {
+    height: 90vh;
+}
+
+.hero__background {
+    object-fit: cover;
+    height: 90vh;
+    width: 100%;
+    position: absolute;
+    top: 10;
+    z-index: -10;
+}
+
+.hero__foreground {
+    color: var(--color-white);
+    padding-top: 20vh;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.hero__text {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.hero__button {
+    margin-top: 2rem;
+    background-color: var(--color-orange);
+    color: black;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.section {
+    padding: 0 8rem;
+    text-align: center;
+}
+
+.menu {
+    margin: 04rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.main {
+    width: 90%; /* ou uma largura que você desejar */
+    margin: auto;
+    max-width: 1200px;
+}
+
+.gallery__img {
+    border-radius: .75rem;
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover; /* Faz a imagem cobrir toda a área do contêiner sem distorção */
+    m
+}
+
+.gallery__img-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+
+
+.about {
+    height: 40vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+}
+
+.about__background {
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    object-fit: cover;
+}
+
+.about__foreground {
+    color: var(--color-white);
+    text-align: center;
+    padding-top: 15vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.055), var(--color-brackground));
+    height: 40vh;
+    width: 100%;
+}
+
+.about__text {
+    margin-top: 2rem;
+}
+
+.contact {
+    width: 90%; /* ou uma largura que você desejar */
+    margin: auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.contact > div {
+    font-size: 1rem;
+    margin: 1rem;
+    display: inline-block;
+    width: 32vh;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--color-brackground);
+    color: var(--color-orange);
+    padding: 2rem;
+}
+
