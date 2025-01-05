@@ -1,15 +1,3 @@
-//menu com:
-// listar vagas disponíveis - deve mostrar indice, nome e quantidade de candidatos inscritos de todas as vagas
-//criar uma nova vaga - deve pedir um nome para a vaga, uma descrição e data limite, tambem pedir que o usuário confirme as informações antes de salva-las
-//visualizar uma vaga - deve pedir o indice da vaga e mostrar todas as informações dela: indice, nome, descrição, data limite, quantidade de candidatos e nome deles
-//inscrever um candidato em uma vaga - pedir nome do candidadto, indide da vaga e uma confirmação exibindo as informações da vaga antes de salvar o candidato na vaga
-//excluir uma vaga - deve pedir o indice da vaga, mostrat suas informações e pedir que o usuário confirme a exclusão da vaga antes de realmente exclui-la.
-//sair
-
-//utilizar tudo do modulo, como objeto, arrays e funções
-
-
-
 const dados = [] //inserir todos os dados das funções do menu
 
 function exibirMenu() {
@@ -21,46 +9,107 @@ function exibirMenu() {
         "4. Inscrever candidato em uma vaga\n" +
         "5. Excluir uma vaga\n" +
         "6. Sair\n"
-    )
+    );
 }
 
 function VagasDisponiveis() {
-
+    if (dados.length === 0) {
+        alert("Nenhuma vaga disponível.");
+    } else {
+        let lista = "";
+        for (let i = 0; i < dados.length; i++) {
+            let vaga = dados[i];
+            lista += (i + 1) + "." + vaga.nome + " (" + vaga.candidato.length + " candidatos)\n";
+        }
+        alert("Vagas disponíveis:\n" + lista);
+    }
 }
 
 function CriarNovaVaga() {
-    const vaga = {}
-
-    vaga.nome = prompt ("Informe um nome para a vaga: ")
-    vaga.descricao = prompt ("Informe uma descrição para a vaga: ")
-    vaga.limite = prompt ("Informe a data limite para inscrição da vaga: ")
+    const vaga = {
+        nome: prompt ("Informe um nome para a vaga: "),
+        descricao: prompt ("Informe uma descrição para a vaga: "),
+        limite: prompt ("Informe a data (xx/xx/xxxx) limite para inscrição da vaga: "),
+        candidato: [] // inicializa sem candidatos inscritos
+    }
 
     const confirma = confirm(
         "Deseja salvar esta vaga?\n" +
         "\nNome da vaga: " + vaga.nome +
         "\nDescrição da vaga: " + vaga.descricao +
         "\nLimite da vaga: " + vaga.limite
-    )
+    );
 
     if (confirma) {
-        dados.push(vaga)
+        dados.push(vaga);
+        alert("Vaga criada com sucesso!");
     }
 }
 
 function VisualizarVaga() {
-    for (let i = 0; i < dados.length; i++) {
+    let indice = parseInt(prompt("Informe o índice da vaga: ")) - 1;
+
+    if (indice >= 0 && indice < dados.length) {
+        let vaga = dados[indice];
+
+        //Verifica se há candidatos inscritos
+        let listaCandidatos = vaga.candidato.length > 0
+            ? vaga.candidato.join(", ")
+            : "Nenhum candidato inscrito.";
+
         alert(
-            "Vaga " + (i + 1) + //mostrar todas informações das vagas, buscando nos array
-        )
+            "Vaga " + (indice + 1) + ":\n" +
+            "Nome: " + vaga.nome + "\n" +
+            "Descrição: " + vaga.descricao + "\n" +
+            "Data Limite para inscrição: " + vaga.limite + "\n" +
+            "Quantidade de candidatos inscritos: " + vaga.candidato.length + "\n" +
+            "Candidatos: " + listaCandidatos
+        );
+    } else {
+        alert("Índice inválido.");
     }
 }
 
 function InscreverCandidato() {
-    // preciso perguntar os dados do usuário, o indice da vaga, creio que preciso armazenar em arrays
+    let nomeCandidato = prompt ("Insira o nome do candidato: ");
+    let indice = parseInt(prompt("Informe o índice da vaga: ")) - 1;
+
+    if (indice >= 0 && indice < dados.length) {
+        let vaga = dados[indice];
+        let confirma = confirm(
+            "Deseja inscrever " + nomeCandidato + " na vaga?\n" +
+            "Nome da vaga: " + vaga.nome + "\n" +
+            "Descrição: " + vaga.descricao + "\n" +
+            "Data Limite: " + vaga.limite + "\n"
+        );
+
+        if (confirma) {
+            vaga.candidato.push(nomeCandidato)
+            alert("Candidato inscrito com sucesso!");
+        }
+    } else {
+        alert("Índice inválido.");
+    }
 }
 
 function ExcluirVaga() {
+    let indice = parseInt(prompt("Informe o índice da vaga: ")) - 1;
 
+    if (indice >= 0 && indice < dados.length) {
+        let vaga = dados[indice];
+        let confirma = confirm(
+            "Desea realmente excluir a vaga?\n" +
+            "Nome: " + vaga.nome + "\n" +
+            "Descrição: " + vaga.descricao + "\n"
+        );
+
+        if(confirma) {
+            dados.splice(indice, 1);
+            alert("Vaga excluída com sucesso!");
+        }
+    } else {
+        alert("Índice inválido");
+    }
 }
 
 function executar() {
