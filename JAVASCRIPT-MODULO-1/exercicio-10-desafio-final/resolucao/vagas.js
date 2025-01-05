@@ -1,3 +1,5 @@
+//Resolução do professor
+
 const vagas = []
 
 function listarVagas() {
