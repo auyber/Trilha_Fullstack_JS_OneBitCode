@@ -35,7 +35,44 @@ input.addEventListener('keydown', function (ev){
     }
 })
 
-function calculate() {
+//mostrar o valor do resultado, capturando o valor do input
+document.getElementById('equal').addEventListener('click', calculate)
 
+//sempre por padrão irá executar as 2 linhas de erro, caso o eval não de erro, ele remove essas 2 linhas padrões
+function calculate() {
+    resultInput.value = 'ERROR'
+    resultInput.classList.add('error')
+    
+    const result = eval(input.value)
+    resultInput.value = result
+    resultInput.classList.remove('error')
 }
 
+//alterar o item quando for copiado e dar funcionalidade de copiar
+document.getElementById('copyToClipboard').addEventListener('click', function (ev){
+    const button = ev.currentTarget
+    if (button.innerText === 'Copy') {
+        button.innerText = 'Copied!'
+        button.classList.add('success')
+        navigator.clipboard.writeText(resultInput.value)
+    } else {
+        button.innerText = 'Copy'
+        button.classList.remove('success')
+    }
+})
+//alterando o tema, pegando itens do css
+document.getElementById('themeSwitcher').addEventListener('click', function () {
+    if (main.dataset.theme === 'dark') {
+        root.style.setProperty('--bg-color', '#f1f5f9')
+        root.style.setProperty('--border-color', '#aaa')
+        root.style.setProperty('--font-color', '#212529')
+        root.style.setProperty('--primary-color', '#26834a')
+        main.dataset.theme = 'light'
+    } else {
+        root.style.setProperty('--bg-color', '#212529')
+        root.style.setProperty('--border-color', '#666')
+        root.style.setProperty('--font-color', '#f1f5f9')
+        root.style.setProperty('--primary-color', '#4dff91')
+        main.dataset.theme = 'dark'
+    }
+})
