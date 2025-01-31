@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Tic Tac Toe (Jogo da Velha)</title>
 </head>
 <body>
-    <h1>Tic Tac Toe (Jogo da velha)</h1>
+    <h1>🎮 Tic Tac Toe 🎲</h1>
+    
+    <section id="playersName">
+        <h2>Jogadores</h2>
+        <div class="input-group">
+            <label for="p1">Jogador 1 (X):</label>
+            <input type="text" name="p1" id="p1" placeholder="Nome do Jogador 1">
+        </div>
+        <div class="input-group">
+            <label for="p2">Jogador 2 (O):</label>
+            <input type="text" name="p2" id="p2" placeholder="Nome do Jogador 2">
+        </div>
+        <button id="play">Começar Jogo</button>
+    </section>
+
+    <div class="game-container">
+        <div class="current-player">
+            Vez do jogador: <span id="currentPlayer"></span>
+        </div>
+        
+        <div class="game-board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <button class="restart-btn">Reiniciar Jogo</button>
+    </div>
+
 </body>
 </html>

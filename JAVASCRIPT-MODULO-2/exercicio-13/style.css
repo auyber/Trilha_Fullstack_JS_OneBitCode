@@ -1,0 +1,172 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #1a1a1a;
+    --text-color: #ecf0f1;
+    --win-color: #2ecc71;
+    --hover-color: #34495e;
+    --restart-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#playersName {
+    background: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+#playersName h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+input {
+    padding: 0.5rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--win-color);
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.game-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem; /* Adicione espaçamento entre os elementos */
+}
+
+.current-player {
+    font-size: 1.5em;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.current-player span {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.cell.x {
+    color: var(--secondary-color);
+}
+
+.cell.o {
+    color: var(--win-color);
+}
+
+.restart-btn {
+    background-color: var(--restart-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+.restart-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+    }
+}
