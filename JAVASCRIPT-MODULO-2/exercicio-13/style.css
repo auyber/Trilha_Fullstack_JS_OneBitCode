@@ -155,9 +155,26 @@ button:hover {
     font-weight: bold;
 }
 
+.message {
+    color: var(--win-color);
+    font-size: 1.5em;
+    margin: 1rem 0;
+}
+
 .restart-btn:hover {
     background-color: #c0392b;
     transform: translateY(-2px);
+}
+
+.winning-cell {
+    background-color: #2ecc7130;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 @media (max-width: 480px) {
