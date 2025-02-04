@@ -1,40 +1,64 @@
-//crie quatro funções que aceitem qualquer quantidade de parâmetros e utilizando a sintaxe de arrow functions para calcular as operações abaixo.
-/*
-Operações:
-Média Aritmética Simples: Pode ser calculada somando todos os valores e dividindo o total da soma pela quantidade de valores.
-Exemplo: 
-media(2, 6, 3, 7, 4) === 4.4
-// porque
-2 + 6 + 3 + 7 + 4 === 22
-// e 
-22 / 5 === 4.4
+// Operações:
+// Média Aritmética Simples: Pode ser calculada somando todos os 
+
+const aritmeticaSimples = (...numbers) => {
+    if (numbers.length === 0) return 0
+
+    const soma = numbers.reduce((acc, num) => acc + num, 0)
+    return soma / numbers.length
+}
+
+console.log(aritmeticaSimples(1,2,3,4,5))
 
 
-Média Aritmética Ponderada: Semelhante à média aritmética simples, porém é possível atribuir um peso a cada valor informado, fazendo com que ele tenha um valor proporcionalmente diferente dos outros. Pode ser calculada somando as multiplicações dos valores pelos seus respectivos pesos e dividindo o total pela soma dos pesos.
-Exemplo: 
-// n -> número, p -> peso
-mediaPonderada({ n: 7, p: 2}, { n: 9, p: 5 }, { n: 3, p: 1 }) === 7.75
-// porque
-(7 * 2) + (9 * 5) + (3 * 1) === 62
-// e
-62 / (2 + 5 + 1) === 7.75
+Média Aritmética Ponderada
+const mediaPonderada = (notasPesos) => {
+    let somaPonderada = notasPesos.reduce((acc, [nota, peso]) => acc + nota * peso, 0)
+    let somaPeso = notasPesos.reduce((acc, [,peso]) => acc + peso, 0)
+    return somaPeso === 0 ? 0 : somaPonderada / somaPeso
+}
+
+console.log(mediaPonderada([[7,2],[9,5],[3,1]]))
 
 
-Mediana: Pode ser calculada encontrando o valor central de uma sequência de números crescente ou decrescente. Caso existam dois números centrais, a mediana é calculada através da média aritmética simples desses dois números.
-Exemplo:
-mediana(2, 4, 5, 7, 42, 99) === 6
-// porque 5 e 7 estão juntos no centro da sequência e
-media(5, 7) === 6
-
-mediana(15, 14, 8, 7, 3) === 8
-// porque 8 está no centro da sequência
 
 
-Moda: Pode ser calculada encontrando o valor que mais se repete em um dado conjunto.
-Exemplo:
-moda(1, 1, 5, 4, 9, 7, 4, 3, 5, 2, 4, 0, 4) === 4
-// porque:
-// 4 aparece 4 vezes
-// 5 e 1 aparecem 2 vezes
-// 9, 7, 3, 2 e 0 aparecem 1 vez
-/*
+//Mediana
+const mediana = (...numeros) => {
+    const ordenados = numeros.sort((a, b) => a - b);
+    const meio = Math.floor(ordenados.length / 2);
+
+    if (ordenados.length % 2 !== 0) {
+        return ordenados[meio]; // Ímpar: retorna o número central
+    }
+
+    return (ordenados[meio - 1] + ordenados[meio]) / 2; // Par: média dos centrais
+};
+
+console.log(mediana(2, 4, 5, 7, 42, 99)); // 6 números → Média entre 5 e 7 → Resultado: 6
+console.log(mediana(15, 14, 8, 7, 3));   // 5 números → Número central = 8
+
+
+//MODA
+const moda = (...numeros) => {
+    const contagem = {};
+
+    // Contar a frequência de cada número
+    numeros.forEach(num => {
+        contagem[num] = (contagem[num] || 0) + 1;
+    });
+
+    // Encontrar a maior frequência
+    const maxFrequencia = Math.max(...Object.values(contagem));
+
+    // Encontrar todos os números com a maior frequência
+    const modas = Object.keys(contagem).filter(num => contagem[num] === maxFrequencia);
+
+    // Retorna a moda, ou modas em caso de empate
+    return modas.map(Number);
+};
+
+console.log(moda(1, 1, 5, 4, 9, 7, 4, 3, 5, 2, 4, 0, 4)); // [4]
+console.log(moda(1, 1, 5, 5, 9, 7, 3, 3));               // [1, 5, 3] (se houver empate)
+console.log(moda(2, 2, 2));                            // [2]
+console.log(moda(9, 7, 3, 0));                        // [9, 7, 3, 0] (se todos aparecem 1 vez)
