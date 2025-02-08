@@ -1,0 +1,103 @@
+* html, body {
+    box-sizing: border-box;
+    margin: 0 px;
+    padding: 0 px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.616);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header > nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header a {
+    color: red;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header > nav a:hover {
+    text-decoration: underline;
+}
+
+.bg-img {
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+}
+
+main > h2 {
+    color: red;
+    font-size: 4rem;
+    text-shadow: 0 3px 3px black;
+    -webkit-text-stroke: black;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.call-to-action {
+    display: flex;
+    gap: 3rem;
+}
+
+.call-to-action > a {
+    background-color: red;
+    border: 2px solid white;
+    border-radius: .5rem;
+    color: white;
+    padding: .75rem 1.25rem;
+    text-decoration: none;
+}
+
+.call-to-action > a:hover {
+    background-color: green;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.774);
+    padding: 1.5rem;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+footer > nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: row-reverse;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
