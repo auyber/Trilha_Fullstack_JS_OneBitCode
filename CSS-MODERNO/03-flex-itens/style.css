@@ -1,0 +1,53 @@
+body {
+    background-color: #2c2c2d;
+    color: #fff;
+    font-family: sans-serif;
+  }
+  
+  .flex-container {
+    display: flex;
+  
+    /* as propriedades são baseadas na direção, ao mudar a direção o comportamento também muda */
+    /* flex-direction: column; */
+    /* height: 32rem; */
+  }
+  
+  .flex-item {
+    width: 10rem;
+    /* flex-grow flex-shrink flex-basis */
+  }
+  
+  .box.red {
+    flex-shrink: 1;
+    flex-basis: 15rem;
+  }
+  
+  .box.yellow {
+    flex-grow: 0; /* valor padrão */
+    flex-shrink: 1; /* valor padrão */
+  }
+  
+  .box.blue {
+    flex: 1 0 10rem;
+  }
+  
+  /* Estilos auxiliares */
+  
+  .box {
+    background-color: #4547c7;
+    border: 2px solid #272727;
+  }
+  
+  .box.red {
+    background-color: #ff665c;
+  }
+  
+  .box.yellow {
+    background-color: #f9ff58;
+    height: 5rem;
+  }
+  
+  .box.blue {
+    background-color: #5255eb;
+    height: 3rem;
+  }
