@@ -1,0 +1,22 @@
+* html, body {
+    margin: 0px;
+    padding: 0px;
+    padding: 1rem 2rem;
+}
+
+.galery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /*quebra de linha*/
+    gap: 0.125rem; /*2px espaçamento entre as fotos*/
+}
+
+.galery > img {
+    flex: 1 1 12rem; /*taxa de crescimento, encolhimento e tamanho base*/
+    max-height: 12rem; /*altura padrão para as imagens*/
+    object-fit: cover; /*imagens se ajustando e não distorcendo*/
+    /*height: 12rem;
+    width: 12rem;   Aqui colocamos uma largura e altura minima, para ter um aspecto melhor de galeria*/ 
+    aspect-ratio: 1 / 1; /* o aspect ratio serve para seguir uma proporção especifíca, exemplo, aqui a largura e altura tem proporções iguais, junto com o max height vc limita a altura*/
+    max-height: 12rem; 
+}
