@@ -1,0 +1,51 @@
+body {
+    background-color: #2c2c2d;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .grid-container {
+    background-color: #fff;
+    min-height: 100vh;
+    padding: 1rem;
+    /* ativa o grid display */
+    display: grid;
+    gap: 1rem;
+  
+    /* Definindo as colunas e as linhas usando grid-template */
+  
+    /* 3 colunas: a primeira tem 1 parte, a segunda 4 partes e a terceira 2 partes */
+    /* grid-template-columns: 20rem 60rem 10rem; */
+    grid-template-columns: 1fr 4fr 2fr;
+    /* grid-template-columns: repeat(6, 1fr); */
+    /* grid-template-columns: minmax(8rem, 16rem) minmax(12rem, 1fr) minmax(4rem, 16rem); */
+  
+      /* 4 linhas: a primeira tem 6rem, a segunda 1 parte, a terceira 4 rem e a quarta 6 rem */
+    grid-template-rows: 6rem 1fr 4rem 6rem;
+  }
+  
+  .grid-item {
+    background-color: #4c5caf;
+    padding: 1rem;
+  }
+  
+  .header {
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+  
+  .sidebar {
+    grid-column: 1;
+    grid-row: span 3;
+  }
+  
+  .main {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+  
+  .footer {
+    grid-column: 2 / 4;
+    grid-row: 4;
+  }
