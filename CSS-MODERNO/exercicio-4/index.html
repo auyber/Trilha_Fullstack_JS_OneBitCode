@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    Dashboard de Vendas
+  </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Vendas</a></li>
+      <li><a href="#">Clientes</a></li>
+      <li><a href="#">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="stats-section">
+      <div class="card">
+        <h3>Total de Vendas</h3>
+        <p>R$ 120.500</p>
+      </div>
+      <div class="card">
+        <h3>Novos Clientes</h3>
+        <p>350</p>
+      </div>
+      <div class="card">
+        <h3>Taxa de Conversão</h3>
+        <p>3,5%</p>
+      </div>
+      <div class="card">
+        <h3>Produtos em Estoque</h3>
+        <p>2.150</p>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Gráfico de Vendas</h2>
+      <div class="charts">
+        <div id="chart1" class="chart-placeholder">[Gráfico 1]</div>
+        <div id="chart2" class="chart-placeholder">[Gráfico 2]</div>
+        <div id="chart3" class="chart-placeholder">[Gráfico 3]</div>
+        <div id="chart4" class="chart-placeholder">[Gráfico 4]</div>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Vendas Recentes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Produto</th>
+            <th>Cliente</th>
+            <th>Data</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Produto A</td>
+            <td>Cliente X</td>
+            <td>01/09/2024</td>
+            <td>R$ 500</td>
+            <td>Concluído</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Produto B</td>
+            <td>Cliente Y</td>
+            <td>02/09/2024</td>
+            <td>R$ 300</td>
+            <td>Pendente</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Produto C</td>
+            <td>Cliente Z</td>
+            <td>03/09/2024</td>
+            <td>R$ 120</td>
+            <td>Concluído</td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Produto D</td>
+            <td>Cliente W</td>
+            <td>04/09/2024</td>
+            <td>R$ 450</td>
+            <td>Cancelado</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dashboard de Vendas - 2024</p>
+  </footer>
+
+</body>
+
+</html>
