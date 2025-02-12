@@ -1,0 +1,30 @@
+body {
+    background-color: #2c2c2d;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  
+    display: grid;
+    place-content: start center;
+    min-height: 100vh;
+  }
+  
+  .grid-container {
+    background-color: #1c1a1d;
+    padding: 1rem;
+    height: 28rem;
+  
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 8rem 8rem;
+    grid-template-rows: 8rem 8rem;
+  
+    align-content: start;
+    align-items: start;
+    justify-content: center;
+    justify-items: end;
+  }
+  
+  .grid-item {
+    background-color: #4c7caf;
+    padding: 1rem;
+  }
