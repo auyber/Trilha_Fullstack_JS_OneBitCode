@@ -1,0 +1,93 @@
+/* LEMBRE-SE DE NÃO COMETER O ERRO, de tentar usar um grid-template-area, grid-template-columns e  grid-template-rows para cada item que quer estilizar.
+
+FOQUE NOS PRINCIPAIS, como por exemplo abaixo: header, sidebar, content e footer.
+
+DEPOIS estilize o conteúdo de cada grid principal...
+
+POIS VOCÊ PODE UTILIZAR GRID DENTRO DE GRID!!!!!*/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+
+    /* definimos as areas de cada item se baseando nos blocos principais, errei ao tentar fazer as colunas e linhas baseado em cada item do html ex: (header, sidebar, cards 1 ao 4, charts, tabela */
+    display: grid;
+    grid-template-columns: 280 1fr;
+    grid-template-rows: 4rem 1fr 3rem;
+    grid-template-areas: 
+    "header  header"
+    "sidebar content"
+    "sidebar footer";
+}
+
+
+header {
+    grid-area: header;
+}
+
+.sidebar {
+   grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+/* definimos o grid para a stats-section que faz parte do grid content */
+.stats-section {
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    grid-template-columns: repeat(4, max-content);
+}
+
+/* definimos o grid charts que também faz parte do grid content */
+.charts {
+    display: grid;
+    grid-template-areas: 
+    "gr1 gr2 gr3"
+    "gr4 gr4 gr4";
+    gap: 10px;
+    width: 100%;
+}
+
+#chart1 {
+    grid-area: gr1;
+    width: 100%;
+}
+
+#chart2 {
+    grid-area: gr2;
+    width: 100%;
+}
+
+#chart3 {
+    grid-area: gr3;
+    width: 100%;
+}
+
+#chart4 {
+    grid-area: gr4;
+    height: 200px;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse; /*Faz com que as bordas das células da tabela se "fundam" em uma única borda. Sem isso, as células da tabela teriam bordas separadas, criando um espaço entre elas.*/
+    width: 100%;
+}
+
+
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+}
