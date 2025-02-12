@@ -12,6 +12,12 @@ POIS VOCÊ PODE UTILIZAR GRID DENTRO DE GRID!!!!!*/
     padding: 0px;
 }
 
+:root {
+    --cor-primaria: #4C6DAF; 
+    --cor-secundaria: #CCCCCC;
+    --cor-cinza: #2C2C2D;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     min-height: 100vh;
@@ -29,14 +35,32 @@ body {
 
 header {
     grid-area: header;
+    background-color: var(--cor-primaria);
+    color: white;
+    align-content: center;
+    font-size: 18px;
+    padding-left: 10px;
 }
 
 .sidebar {
    grid-area: sidebar;
+   background-color: var(--cor-cinza);
+   padding: 10px;
+;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .content {
     grid-area: content;
+    background-color: var(--cor-secundaria);
 }
 
 /* definimos o grid para a stats-section que faz parte do grid content */
@@ -45,6 +69,13 @@ header {
     align-items: start;
     justify-items: start;
     grid-template-columns: repeat(4, max-content);
+
+}
+
+.card1, .card2, .card3, .card4 {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
 }
 
 /* definimos o grid charts que também faz parte do grid content */
@@ -54,28 +85,41 @@ header {
     "gr1 gr2 gr3"
     "gr4 gr4 gr4";
     gap: 10px;
-    width: 100%;
+    background-color: white;
+    margin: 0px 10px 10px 10px;
+    padding: 0px 10px 10px 10px;
+}
+
+.chart-section > h2 {
+    background-color: white;
+    margin: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
 }
 
 #chart1 {
     grid-area: gr1;
-    width: 100%;
+    background-color: var(--cor-secundaria);
+    height: 200px;
 }
 
 #chart2 {
     grid-area: gr2;
-    width: 100%;
+    background-color: var(--cor-secundaria);
 }
 
 #chart3 {
     grid-area: gr3;
-    width: 100%;
+    background-color: var(--cor-secundaria);
 }
 
 #chart4 {
     grid-area: gr4;
     height: 200px;
-    width: 100%;
+    background-color: var(--cor-secundaria);
+}
+
+.chart-placeholder {
+    align-content: center;
 }
 
 table {
