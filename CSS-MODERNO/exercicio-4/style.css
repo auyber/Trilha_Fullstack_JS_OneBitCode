@@ -24,7 +24,7 @@ body {
 
     /* definimos as areas de cada item se baseando nos blocos principais, errei ao tentar fazer as colunas e linhas baseado em cada item do html ex: (header, sidebar, cards 1 ao 4, charts, tabela */
     display: grid;
-    grid-template-columns: 280 1fr;
+    grid-template-columns: 280px 1fr;
     grid-template-rows: 4rem 1fr 3rem;
     grid-template-areas: 
     "header  header"
@@ -76,6 +76,9 @@ a:hover {
     background-color: white;
     margin: 10px;
     padding: 10px;
+    height: 100px;
+    align-content: center;
+    text-align: center;
 }
 
 /* definimos o grid charts que também faz parte do grid content */
@@ -100,22 +103,26 @@ a:hover {
     grid-area: gr1;
     background-color: var(--cor-secundaria);
     height: 200px;
+    text-align: center;
 }
 
 #chart2 {
     grid-area: gr2;
     background-color: var(--cor-secundaria);
+    text-align: center;
 }
 
 #chart3 {
     grid-area: gr3;
     background-color: var(--cor-secundaria);
+    text-align: center;
 }
 
 #chart4 {
     grid-area: gr4;
     height: 200px;
     background-color: var(--cor-secundaria);
+    text-align: center;
 }
 
 .chart-placeholder {
@@ -124,14 +131,35 @@ a:hover {
 
 table {
     border-collapse: collapse; /*Faz com que as bordas das células da tabela se "fundam" em uma única borda. Sem isso, as células da tabela teriam bordas separadas, criando um espaço entre elas.*/
-    width: 100%;
+    width: 99%;
+    margin: 10px;
 }
 
+.table-section {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
 
+table th {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+table th, td{
+    text-align: left;
+    padding: 10px;
+    box-shadow: 1px 1px var(--cor-secundaria);
+}
+
+td:hover {
+    background-color: var(--cor-secundaria);
+}
 
 footer {
     grid-area: footer;
     text-align: center;
     background: #2c3e50;
     color: white;
+    align-content: center;
 }
