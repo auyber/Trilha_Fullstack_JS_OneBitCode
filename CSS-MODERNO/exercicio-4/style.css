@@ -7,7 +7,9 @@ DEPOIS estilize o conteúdo de cada grid principal...
 POIS VOCÊ PODE UTILIZAR GRID DENTRO DE GRID!!!!!*/
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Define o modelo de caixa como "border-box", 
+    garantindo que largura e altura incluam padding e borda, 
+    facilitando o controle do layout. */
     margin: 0px;
     padding: 0px;
 }
@@ -40,6 +42,7 @@ header {
     align-content: center;
     font-size: 18px;
     padding-left: 10px;
+    /* podemos fazer o alinhamento, aplicando um display:grid para o header e depois um align-content center */
 }
 
 .sidebar {
@@ -52,6 +55,8 @@ header {
 a {
     text-decoration: none;
     color: white;
+    display: block; /* Define o elemento como bloco, garantindo que ocupe toda a largura disponível. */
+    padding: 1rem;
 }
 
 a:hover {
@@ -158,8 +163,8 @@ td:hover {
 
 footer {
     grid-area: footer;
-    text-align: center;
     background: #2c3e50;
     color: white;
-    align-content: center;
+    display: grid; /* Define um layout de grade, permitindo melhor organização dos elementos. */
+    place-content: center; /* Centraliza o conteúdo horizontal e verticalmente dentro do container. */
 }
