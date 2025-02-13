@@ -1,0 +1,103 @@
+body {
+    background-color: #60ffa5;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  header,
+  section {
+    padding: 0.25rem 2rem;
+    text-align: center;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  @media screen and (min-width: 769px) {
+    header,
+    section {
+      padding: 2rem 8rem;
+      text-align: left;
+    }
+    
+    .mobile-only {
+      display: none;
+    }
+  
+    .desktop-only {
+      display: block;
+    }
+  }
+  
+  /* Estilos Mobile */
+  
+  .products {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .product {
+    background-color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+    border-radius: 8px;
+    padding: 1rem 1.75rem 1.5rem;
+  }
+  
+  section {
+    margin-top: 4rem;
+  }
+  
+  /* Estilos Tablet */
+  
+  @media screen and (min-width: 40rem) {
+    .products {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    section {
+      margin-top: 0;
+    }
+  }
+  
+  /* Estilos Desktop */
+  
+  @media screen and (min-width: 1080px) {
+    .products {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  /* Estilos Desktop Full HD */
+  
+  @media screen and (min-width: 1600px) {
+    .products {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  /* Preferências de Cor */
+
+@media screen and (prefers-color-scheme: light) {
+    body {
+      background-color: #e0e0e0;
+      color: #1c1a1d;
+    }
+  
+    .product {
+      background-color: #fff;
+      color: #1c1a1d;
+    }
+  }
+  
+  @media screen and (prefers-color-scheme: dark) {
+    body {
+      background-color: #1c1a1d;
+      color: #fff;
+    }
+  
+    .product {
+      background-color: #2c2c2d;
+      color: #fff;
+    }
+  }
