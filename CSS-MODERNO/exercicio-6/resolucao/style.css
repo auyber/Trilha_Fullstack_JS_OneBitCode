@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*criar variaveis com as cores que vamos utilizar */
+  :root {
+    --color-white: #ffffff;
+    --color-light: #e0e0e0;
+    --color-purple: #6c63ff;
+    --color-dark: #2c2c2e;
+    --color-black: #070707;
+  
+    /*criamos outras variaveis com as variaveis de cores anteriormente definidas, para facilitar a troca de tema claro e escuro, pois não precisamos alterar as variaveis acima. iremos trocar a variavel background  */
+    --color-primary: var(--color-purple);
+    --color-background: var(--color-light);
+    --color-foreground: var(--color-black);
+    --color-card-background: var(--color-white);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Hero Section */
+  
+  .hero {
+    /* aqui foi utilizado a técnica para escurer a imagem de fundo */
+    background: 
+      linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+      url("images/pexels-bertellifotografia-3321797.jpg"); 
+    background-position: center;
+    background-size: cover;
+    color: var(--color-white);
+    min-height: 100vh;
+    text-align: center;
+    display: grid; /*usar display grid junto com place content center, técnica para alinhas o conteudo ao centro, tanto vertical quanto horizontal */
+    place-content: center;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: .5rem;
+    color: var(--color-white);
+    display: inline-block;
+    font-size: 1rem;
+    padding: .75rem 1.5rem;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background-color: #554ec9;
+  }
+  
+  /* Speakers Section */
+  
+  .speakers {
+    padding: 3rem 1.5rem;
+  }
+  
+  .speakers h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .speaker-card {
+    background-color: var(--color-card-background);
+    border-radius: .75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Sempre analizar o tamanho máximo que a imagem pode ter e limitar o tamanho com o max-width, e para a responsividade, combine width 100% e heigth auto */
+  .speaker-card img {
+    border-radius: 9999px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    max-width: 10rem;
+    width: 100%;
+  }
+  
+  .speaker-card h3 {
+    margin-bottom: .75rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Schedule Section */
+  
+  .schedule {
+    padding: 3rem 1.5rem;
+  }
+  
+  .schedule h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .schedule-item {
+    background-color: var(--color-card-background);
+    border-radius: .75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .schedule-item h3 {
+    margin-bottom: .75rem;
+  }
+  
+  /* Newsletter Section */
+  
+  .newsletter {
+    padding: 3rem 1.5rem;
+  }
+  
+  .newsletter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .newsletter-text {
+    text-align: center;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 2rem;
+    margin-bottom: .75rem;
+  }
+  
+  .newsletter-text p {
+    color: #888888;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* colocamos o display block para mudar de linha a label do input */
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+  
+  .form-group input {
+    background-color: var(--color-card-background);
+    border: 1px solid #888888;
+    border-radius: .5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 32rem;
+    padding: .75rem;
+    width: 100%;
+  }
+  
+  .newsletter-image {
+    text-align: center;
+  }
+  
+  .newsletter-image img {
+    height: auto;
+    max-width: 75%;
+  }
+  
+  /* Footer Section */
+  
+  .footer {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Media Queries */
+  
+  @media screen and (min-width: 768px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+    
+  
+    .speakers-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .schedule-grid {
+      grid-template-columns: repeat(2, 2fr);
+    }
+  
+    .newsletter-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .newsletter-text {
+      text-align: left;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .hero,
+    .speakers,
+    .schedule,
+    .newsletter {
+      padding: 4rem 8rem;
+    }
+  }
+  
+  /* Color Scheme */
+  
+  @media screen and (prefers-color-scheme: dark) {
+    :root {
+      --color-background: var(--color-dark);
+      --color-foreground: var(--color-white);
+      --color-card-background: var(--color-black);
+    }
+  }
