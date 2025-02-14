@@ -1,0 +1,12 @@
+$btn-color: red;
+$width-btn: 95px;
+
+.btn1{
+    width: $width-btn;
+    background-color: $btn-color;
+}
+
+.btn2{
+    width: 70px;
+    background-color: $btn-color;
+}
