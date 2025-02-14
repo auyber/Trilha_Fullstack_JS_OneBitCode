@@ -1,0 +1,7 @@
+#cadastro-text {
+    // font-family: sans-serif;
+    // font-size: 16px;
+    // color: red;
+    //Resumimos tudo acima, utilizando o mixing abaixo
+    @include text-style($btn-background, 16px, sans-serif)
+}
