@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "typescript": "^5.8.2",
+    "build": "tsc"
+  }
+}
