@@ -3,6 +3,7 @@
     "loadash": "^1.0.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.16"
+    "@types/lodash": "^4.17.16",
+    "typescript": "^5.8.2"
   }
 }
