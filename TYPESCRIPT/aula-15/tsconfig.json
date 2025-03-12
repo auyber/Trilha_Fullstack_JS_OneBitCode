@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "outDir": "public/dist",
+        "target": "ESNext"
+    }
+}
