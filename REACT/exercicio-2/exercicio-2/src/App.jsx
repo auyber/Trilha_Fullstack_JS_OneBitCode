@@ -6,6 +6,8 @@ export default function App() {
     <>
       <h1>Exercício 2</h1>
       <Card />
+      <Card />
+      <Card />
     </>
   )
 }
