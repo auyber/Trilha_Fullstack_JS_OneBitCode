@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    background-color: #D6E1E6;
+    border-radius: 15px;
+    gap: 4rem;
+    height: 30rem;
+    width: 50rem;
+    margin: 0 auto;
+    padding: 4rem;
+}
+
+.poster {
+    border: 8px solid #000;
+    box-shadow: 0 24px 32px -16px rgba(0, 0, 0, 0.4);
+}
+
+.container p {
+    line-height: 1.5rem;
+}
+
+.button {
+background-color: black;
+color: white;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+padding: 6px 10px;
+border-radius: 10px;
+margin-top: 30px;
+font-size: 1rem;
+transition: .3s;
+}
+
+.container button:hover {
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
