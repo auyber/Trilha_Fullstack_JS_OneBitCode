@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 5vh auto;
+    padding: 15px 0;
+    width: 30vw;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 25px;
+}
+
+.container p {
+    font-size: 18px;
+}
+
+.container h1, p {
+    background-color: white;
+    margin: 10px;
+}
+
+.container hr {
+    background-color: #418DD0;
+    border: none;
+    height: 2px;
+}
+
+.img {
+    height: 15vh;
+    width: 15vw;
+    border-radius: 9999px;
+    margin: 20px auto;
+}
+
+.btn {
+    padding: 10px;
+    margin: 10px auto;
+    color: white;
+    background-image: linear-gradient(to right, #2376C0, rgba(255, 255, 255, 0.411));
+    width: 15vw;
+    border-radius: 10px;
+}
