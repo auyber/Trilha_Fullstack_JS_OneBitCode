@@ -1,9 +1,11 @@
+import { Fragment } from "react";
 import Card from "./components/Card/Card";
 
 export default function App() {
   return (
-    <div>
+    <>
+      <h1>Exercício 2</h1>
       <Card />
-    </div>
+    </>
   )
 }
