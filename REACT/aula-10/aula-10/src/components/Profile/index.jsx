@@ -2,13 +2,16 @@ import LinkButton from "../LinkButton"
 import ProfileSection from "../ProfileSection"
 import Title from "../Title"
 import styles from "./styles.module.css"
-
-function handClick(ev) {
-  console.log(ev)
-  alert("Você agora está seguindo!")
-}
+import { useState } from "react"
 
 export default function Profile(props) {
+  //[valor, funçãoModificadora]
+  const [followText, setFollowText] = useState("Follow")
+
+  function handClick(ev) {
+    alert("Você agora está seguindo!")
+    setFollowText("Following")
+  }
 
   return (
     <div className={styles.container}>
@@ -19,7 +22,7 @@ export default function Profile(props) {
           className={styles.followButton}
           onClick={handClick}
         >
-          Follow
+          {followText}
           </button>
       </Title>
       <ProfileSection>{props.bio}</ProfileSection> 
